@@ -351,7 +351,7 @@ Circle.prototype = {
     this.effectFlag = 0;
   }
 };
-window.onload = function(){
+window.onload = ()=>{
   window.addEventLsitener("keydown", ()=>
   {field.circles.forEach((Circle)=>{
     Circle.stop()=false;
