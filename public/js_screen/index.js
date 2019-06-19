@@ -354,11 +354,12 @@ Circle.prototype = {
 window.onload = function(){
   window.addEventLsitener("keydown", handleKeydown);
   function handleKeydown(event){
-    var keyCode = event.keyCode;
-    if (keyCode == 13){
-    field.Circles.forEach((Circle)=>{
-      Circle.stop()=false;
-    }
+  var keyCode = event.keyCode;
+  if (keyCode == 13){
+  field.Circles.forEach((Circle)=>{
+    Circle.stop()=false;
+    })
+  }s
   let url = location.href;
   let index = url.replace(/screen/g, "")ss;
   console.log(index);
