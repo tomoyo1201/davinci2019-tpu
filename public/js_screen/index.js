@@ -351,14 +351,14 @@ Circle.prototype = {
     this.effectFlag = 0;
   }
 };
-window.onload = function () {
+window.onload = function () =>{
   document.addEventLsitener("keydown",()=>
     {field.Circles.forEach((Circle)=>{
       Circle.stop=false;
     })
   };
   let url = location.href;
-  let index = url.replace(/screen/g, "");
+  let index = url.replace(/screen/g, "")ss;
   console.log(index);
   let canvas = document.getElementById('game');
   let canvas2 = document.getElementById('chart');
