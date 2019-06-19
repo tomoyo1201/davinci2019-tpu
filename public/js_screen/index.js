@@ -352,8 +352,8 @@ Circle.prototype = {
   }
 };
 window.onload = function(){
-  window.addEventLsitener("keydown", ()
-  =>{field.circles.forEach((circle)=>{
+  window.addEventLsitener("keydown", ()=>
+    {field.circles.forEach((circle)=>{
     circle.stop=false;
   })
   });
