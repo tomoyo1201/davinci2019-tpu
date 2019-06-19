@@ -351,7 +351,7 @@ Circle.prototype = {
     this.effectFlag = 0;
   }
 };
-window.onload = function() =>{
+window.onload = function(){
   window.addEventLsitener("keydown", handleKeydown);
   function handleKeydown(event){
     var keyCode = event.keyCode;
