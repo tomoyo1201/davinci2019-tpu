@@ -352,7 +352,7 @@ Circle.prototype = {
   }
 };
 window.onload = function () =>{
-  document.addEventLsitener("keydown",()=>
+  window.addEventLsitener("keydown",()=>
     {field.Circles.forEach((Circle)=>{
       Circle.stop=false;
     })
