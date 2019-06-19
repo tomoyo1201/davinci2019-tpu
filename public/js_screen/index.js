@@ -358,8 +358,7 @@ window.onload = function(){
   if (keyCode == 13){
   field.Circles.forEach((Circle)=>{
     Circle.stop()=false;
-    })
-  }s
+    });
   let url = location.href;
   let index = url.replace(/screen/g, "")ss;
   console.log(index);
