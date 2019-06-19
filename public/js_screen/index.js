@@ -185,6 +185,7 @@ Field.prototype = {
 };
 const Circle = function (data, field) {
   const props = JSON.parse(data);
+  Circle.stop = true; // Make to stop a circle
   this.color = props.color;
   this.command = (function* () {
     while (true) for (const i in props.command) yield props.command[i];
@@ -351,6 +352,11 @@ Circle.prototype = {
   }
 };
 window.onload = function () {
+  document.addEventLsitener("keydown",()=>
+    {field.Circles.forEach((Circle)=>{
+      Circle.stop=false;
+    })
+  };
   let url = location.href;
   let index = url.replace(/screen/g, "");
   console.log(index);
