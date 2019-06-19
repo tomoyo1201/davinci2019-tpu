@@ -359,7 +359,8 @@ window.onload = function(){
   field.Circles.forEach((Circle)=>{
     Circle.stop()=false;
   })
-  };
+  }
+};
   let url = location.href;
   let index = url.replace(/screen/g, "");
   console.log(index);
