@@ -351,12 +351,14 @@ Circle.prototype = {
     this.effectFlag = 0;
   }
 };
-window.onload = () =>{
-  window.addEventLsitener("keydown",()=>
-    {field.Circles.forEach((Circle)=>{
+window.onload = function() =>{
+  window.addEventLsitener("keydown", handleKeydown);
+  function handleKeydown(event){
+    var keyCode = event.keyCode;
+    if (keyCode == 13){
+    field.Circles.forEach((Circle)=>{
       Circle.stop=false;
-    })
-  };
+    }
   let url = location.href;
   let index = url.replace(/screen/g, "")ss;
   console.log(index);
