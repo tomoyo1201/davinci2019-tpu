@@ -360,7 +360,7 @@ window.onload = function(){
     Circle.stop()=false;
     });
   let url = location.href;
-  let index = url.replace(/screen/g, "")ss;
+  let index = url.replace(/screen/g, "");
   console.log(index);
   let canvas = document.getElementById('game');
   let canvas2 = document.getElementById('chart');
