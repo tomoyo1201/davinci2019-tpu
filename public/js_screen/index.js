@@ -352,13 +352,7 @@ Circle.prototype = {
   }
 };
 window.onload = function() =>{
-  window.addEventLsitener("keydown", handleKeydown);
-  function handleKeydown(event){
-    var keyCode = event.keyCode;
-    if (keyCode == 13){
-    field.Circles.forEach((Circle)=>{
-      Circle.stop=false;
-    }
+
   let url = location.href;
   let index = url.replace(/screen/g, "")ss;
   console.log(index);
@@ -373,6 +367,13 @@ window.onload = function() =>{
   } else {
     socket.on('receiveMessage', receive);
   }
+    window.addEventLsitener("keydown", handleKeydown);
+  function handleKeydown(event){
+    var keyCode = event.keyCode;
+    if (keyCode == 13){
+    field.Circles.forEach((Circle)=>{
+      Circle.stop=false;
+    }
   let outputArea = document.getElementById('output-area');
   field.resize(outputArea, idMatches);
   field.context.fillStyle = "white";
