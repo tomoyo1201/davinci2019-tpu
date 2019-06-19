@@ -352,7 +352,7 @@ Circle.prototype = {
   }
 };
 window.onload = function(){
-  window.addEventLsitener("keydown", handleKeydown);
+  document.addEventLsitener("keydown", handleKeydown);
   function handleKeydown(event){
   var keyCode = event.keyCode;
   if (keyCode == 13){
