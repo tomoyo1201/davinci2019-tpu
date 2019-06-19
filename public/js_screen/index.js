@@ -352,15 +352,11 @@ Circle.prototype = {
   }
 };
 window.onload = function(){
-  document.addEventLsitener("keydown", handleKeydown);
-  function handleKeydown(event){
-  var keyCode = event.keyCode;
-  if (keyCode == 13){
-  field.Circles.forEach((Circle)=>{
+  window.addEventLsitener("keydown", ()=>
+  {field.circles.forEach((Circle)=>{
     Circle.stop()=false;
   })
-  }
-};
+  });
   let url = location.href;
   let index = url.replace(/screen/g, "");
   console.log(index);
