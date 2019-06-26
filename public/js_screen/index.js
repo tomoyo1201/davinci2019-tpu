@@ -357,7 +357,7 @@ Circle.prototype = {
  // })}
 window.onload = function(){
 
-  window.addEventLsitener("keydown",event => {
+  window.addEventListener("keydown",event => {
   if (event.isComposing || event.keyCode === 13) {
     return;
   }
