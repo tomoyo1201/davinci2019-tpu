@@ -185,6 +185,7 @@ Field.prototype = {
 };
 const Circle = function (data, field) {
   const props = JSON.parse(data);
+  
   this.color = props.color;
   this.command = (function* () {
     while (true) for (const i in props.command) yield props.command[i];
@@ -356,11 +357,11 @@ Circle.prototype = {
  // })}
 window.onload = function(){
 
-  window.addEventListener("keydown",event => {
-  if (event.keyCode === 13) {
-  alert("Hello")
-}
-});
+//   window.addEventListener("keydown",event => {
+//   if (event.keyCode === 13) {
+//   alert("Hello")
+// }
+// });
   let url = location.href;
   let index = url.replace(/screen/g, "");
   console.log(index);
