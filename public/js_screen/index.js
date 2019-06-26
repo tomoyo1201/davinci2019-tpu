@@ -358,10 +358,10 @@ Circle.prototype = {
 window.onload = function(){
 
   window.addEventListener("keydown",event => {
-  if (event.isComposing || event.keyCode === 13) {
-    return;
-  }
+  if (event.keyCode === 13) {
+    
   alert("Hello")
+}
 });
   let url = location.href;
   let index = url.replace(/screen/g, "");
