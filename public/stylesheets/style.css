@@ -215,3 +215,8 @@ iframe.iframe{
   height: 500px;
   width: 500px;
 }
+#subsend.pressing {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
