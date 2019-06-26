@@ -351,12 +351,18 @@ Circle.prototype = {
     this.effectFlag = 0;
   }
 };
+ // const setStart = window.addEventListener('keydown', ()=>
+ // {field.circles.forEach((circle)=>{
+ //  circle.stop=false;
+ // })}
 window.onload = function(){
-  window.addEventLsitener("keydown", ()=>
-    {field.circles.forEach((circle)=>{
-    circle.stop=false;
-  })
-  });
+
+  window.addEventLsitener("keydown",event => {
+  if (event.isComposing || event.keyCode === 13) {
+    return;
+  }
+  alert("Hello")
+});
   let url = location.href;
   let index = url.replace(/screen/g, "");
   console.log(index);
