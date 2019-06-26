@@ -185,7 +185,7 @@ Field.prototype = {
 };
 const Circle = function (data, field) {
   const props = JSON.parse(data);
-  circle.stop = true; // Make to stop circles
+  // circle.stop = true; 
   this.color = props.color;
   this.command = (function* () {
     while (true) for (const i in props.command) yield props.command[i];
