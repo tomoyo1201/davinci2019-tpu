@@ -359,8 +359,14 @@ window.onload = function(){
 
   window.addEventListener("keydown",event => {
   if (event.keyCode === 13) {
-    
   alert("Hello")
+    const receive = d => field.addCircle(new Circle(d, field));
+  if (idMatches) {
+    const id = decodeURIComponent(idMatches[1]);
+    socket.on('receive' + id, receive);
+  } else {
+    socket.on('receiveMessage', receive);
+  }
 }
 });
   let url = location.href;
@@ -370,13 +376,13 @@ window.onload = function(){
   let canvas2 = document.getElementById('chart');
   const idMatches = location.search.match(/id=(.*?)(&|$)/);
   const field = new Field(canvas, canvas2, idMatches);
-  const receive = d => field.addCircle(new Circle(d, field));
-  if (idMatches) {
-    const id = decodeURIComponent(idMatches[1]);
-    socket.on('receive' + id, receive);
-  } else {
-    socket.on('receiveMessage', receive);
-  }
+  // const receive = d => field.addCircle(new Circle(d, field));
+  // if (idMatches) {
+  //   const id = decodeURIComponent(idMatches[1]);
+  //   socket.on('receive' + id, receive);
+  // } else {
+  //   socket.on('receiveMessage', receive);
+  // }
   let outputArea = document.getElementById('output-area');
   field.resize(outputArea, idMatches);
   field.context.fillStyle = "white";
