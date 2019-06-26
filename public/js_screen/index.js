@@ -184,7 +184,6 @@ Field.prototype = {
   }
 };
 const Circle = function (data, field) {
-  circle.stop = true; 
   const props = JSON.parse(data);
   this.color = props.color;
   this.command = (function* () {
