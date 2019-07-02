@@ -136,35 +136,12 @@ window.onload = () => {
   setEvent('subsend', () => send('demo' + socket.id));
 };
 
-var flag=true;
-  document.onkeydown = function (evt){
-      if (!evt) e = window.event;
-      if(flag){
-        console.log("キーが押された");
-        for(var key in keygainpair){
-          console.log("keydown before: "+keygainpair[key].gain.value);
-          keygainpair[key].gain.value=beforevalue[key];
-          console.log("keydown after: "+keygainpair[key].gain.value);
-        }
-      }
-      flag=false;
-    }
+document.onkeydown = function (evt){
+    // 既存の処理中略
+    document.getElementById("running").classList.add("pressing");
+}
+document.onkeyup = function (evt){
+    // 既存の処理中略
+    document.getElementById("running").classList.remove("pressing");
+}
 
-  //キーアップ処理
-    document.onkeyup=function (evt){
-      if (!evt) e = window.event;
-      console.log("キーが離された");
-      flag=true;
-      for(var key in keygainpair){
-        console.log("keyup before: "+keygainpair[key].gain.value);
-        keygainpair[key].gain.value=0.5;
-        console.log("keyup after: "+keygainpair[key].gain.value);
-      }
-    }
-
-//     document.onkeydown = function (evt){
-//     document.getElementById("subsend").classList.add("pressing");
-// }
-// document.onkeyup = function (evt){
-//     document.getElementById("subsend").classList.remove("pressing");
-// }
