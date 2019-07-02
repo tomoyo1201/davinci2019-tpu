@@ -381,3 +381,17 @@ window.onload = function(){
   field.context.fillStyle = "white";
   field.context.fillRect(field.size.width, 0, field.canvas.width * 0.3, field.size.height);
 };
+
+document.onkeydown = function (evt){ 
+  if(!evt) e = window.event;
+  if(flag){
+      console.log("キーが押された")
+  }
+
+
+document.onkeydown = function (evt){
+    document.getElementById("running").classList.add("pressing");
+}
+document.onkeyup = function (evt){
+    document.getElementById("running").classList.remove("pressing");
+}
