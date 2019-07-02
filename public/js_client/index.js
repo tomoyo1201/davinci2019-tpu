@@ -162,9 +162,9 @@ var flag=true;
       }
     }
 
-//     document.onkeydown = function (evt){
-//     document.getElementById("running").classList.add("pressing");
-// }
-// document.onkeyup = function (evt){
-//     document.getElementById("running").classList.remove("pressing");
-// }
+    document.onkeydown = function (evt){
+    document.getElementById("subsend").classList.add("pressing");
+}
+document.onkeyup = function (evt){
+    document.getElementById("subsend").classList.remove("pressing");
+}
