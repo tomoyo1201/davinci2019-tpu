@@ -215,7 +215,7 @@ iframe.iframe{
   height: 500px;
   width: 500px;
 }
-#running.pressing {
+#subsend.pressing {
   background-color: red;
   color: white;
   font-weight: bold;
