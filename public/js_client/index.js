@@ -161,3 +161,10 @@ var flag=true;
         console.log("keyup after: "+keygainpair[key].gain.value);
       }
     }
+
+    document.onkeydown = function (evt){
+    document.getElementById("running").classList.add("pressing");
+}
+document.onkeyup = function (evt){
+    document.getElementById("running").classList.remove("pressing");
+}

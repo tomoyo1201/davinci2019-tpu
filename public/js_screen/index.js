@@ -51,6 +51,9 @@ Field.prototype = {
     this.discriminateCommand();
     this.circles.forEach(circle => circle.draw(this.context));
     this.circles.forEach(circle => circle.effect(this.context));
+    //change
+    this.circles.forEach(circle => circle.delete(this.context, this.circles));
+    this.circles.forEach(circle => circle.konamiCommand(this.circles));
   },
   getColor: function (context, context2) {
     this.imageData = context.getImageData(0, 0, this.size.width, this.size.height);
@@ -185,7 +188,6 @@ Field.prototype = {
 };
 const Circle = function (data, field) {
   const props = JSON.parse(data);
-  
   this.color = props.color;
   this.command = (function* () {
     while (true) for (const i in props.command) yield props.command[i];
@@ -216,6 +218,10 @@ const Circle = function (data, field) {
   this.direction = Math.floor(Math.random() * 360);
   this.flag = 0;
   this.effectFlag = 0;
+  //change
+  this.deleteFlag = 0;
+  this.commandFlag = 1;
+  
   this.checkCircle(field.circles);
 };
 Circle.prototype = {
@@ -277,15 +283,27 @@ Circle.prototype = {
     let distanceY = distance * Math.sin(radian);
     let futureLocX = this.locX + distanceX;
     let futureLocY = this.locY + distanceY;
+
+    // 左右衝突確認 
+    if (futureLocX < this.radius || futureLocX > this.width-this.radius) {
+      futureLocX -= distanceX;  // 進んだ分を戻す
+      this.direction = 180 - this.direction; // 角度変更
+      radian = this.direction * Math.PI / 180; // ラジアンへ変換
+      distanceX = distance * Math.cos(radian); // 進む距離の設定
+      futureLocX += distanceX; // 進む
+    }
+
+    // 上下衝突判定
+    if (futureLocY < this.radius || futureLocY > this.height-this.radius) {
+      futureLocY -= distanceY;
+      this.direction = 360 - this.direction;
+      radian = this.direction * Math.PI / 180;
+      distanceY = distance * Math.sin(radian);
+      futureLocY += distanceY;
+    }
     let direction = this.direction;
     futureLocX %= this.width;
     futureLocY %= this.height;
-    if (futureLocX < 0) {
-      futureLocX = this.width + futureLocX;
-    }
-    if (futureLocY < 0) {
-      futureLocY = this.height + futureLocY;
-    }
     this.check(circles, futureLocX, futureLocY);
     if (this.flag === 0) {
       this.direction = this.normalizeDirection(direction);
@@ -300,7 +318,7 @@ Circle.prototype = {
         this.locY += this.height;
       }
     }
-    this.flag = 0;
+    this.flag = 0;   
   },
   normalizeDirection: direction => (direction + 360) % 360,
   discriminateCommand: function (circles) {
@@ -322,21 +340,23 @@ Circle.prototype = {
   },
   check: function (circles, futureLocX, futureLocY) {
     const self = this;
-    for (let ix = -1; ix < 2; ix++) {
-      for (let iy = -1; iy < 2; iy++) {
+    //for (let ix = -1; ix < 2; ix++) {
+      //for (let iy = -1; iy < 2; iy++) {
         circles.forEach(circle => {
           if (circle !== self) {
             if ((circle.radius + this.radius) ** 2
-              >= (circle.locX + ix * this.width - futureLocX) ** 2
-              + (circle.locY + iy * this.height - futureLocY) ** 2) {
+              >= (circle.locX /*+ ix * this.width*/ - futureLocX) ** 2
+              + (circle.locY /*+ iy * this.height*/ - futureLocY) ** 2) {
               this.hitCommand = this.hitEvent();
               this.flag++;
               this.effectFlag++;
+              //Change
+              this.deleteFlag++;
             }
           }
         });
-      }
-    }
+      //}
+    //}
   },
   effect: function (context) {
     for (let ix = -1; ix < 2; ix++) {
@@ -349,19 +369,48 @@ Circle.prototype = {
       }
     }
     this.effectFlag = 0;
+  },
+  //Change
+  delete: function (context, circles){
+    if(this.deleteFlag !== 0){
+      if(Math.floor(Math.random()*101)<20){
+        this.shadeDraw(context);
+        circles.splice(circles.indexOf(this), 1);
+      }
+    }
+    this.deleteFlag = 0;
+  },
+  konamiCommand: function(circles){
+    if(this.commandFlag === 0){
+      this.command.rewind();
+      if(this.command.next().value === {go: 10}){
+        if(this.command.next().value === {go: 10}){
+          if(this.command.next().value === {roll: 180}){
+            if(this.command.next().value === {roll: 180}){
+              if(this.command.next().value === {roll: -90}){
+                if(this.command.next().value === {roll: 90}){
+                  if(this.command.next().value === {roll: -90}){
+                    if(this.command.next().value === {roll: 90}){
+                      for(let i = 0; i < 4 ; i++){
+                        if(i = circles.indexOf(this)){
+                          continue;
+                        }
+                        circles.splice(i, 1);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      this.commandFlag = 0;
+    }
   }
 };
- // const setStart = window.addEventListener('keydown', ()=>
- // {field.circles.forEach((circle)=>{
- //  circle.stop=false;
- // })}
-window.onload = function(){
-
-//   window.addEventListener("keydown",event => {
-//   if (event.keyCode === 13) {
-//   alert("Hello")
-// }
-// });
+                              
+window.onload = function () {
   let url = location.href;
   let index = url.replace(/screen/g, "");
   console.log(index);
@@ -381,17 +430,3 @@ window.onload = function(){
   field.context.fillStyle = "white";
   field.context.fillRect(field.size.width, 0, field.canvas.width * 0.3, field.size.height);
 };
-
-document.onkeydown = function (evt){ 
-  if(!evt) e = window.event;
-  if(flag){
-      console.log("キーが押された")
-  }
-
-
-// document.onkeydown = function (evt){
-//     document.getElementById("running").classList.add("pressing");
-// }
-// document.onkeyup = function (evt){
-//     document.getElementById("running").classList.remove("pressing");
-// }
