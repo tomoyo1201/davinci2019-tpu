@@ -138,10 +138,10 @@ window.onload = () => {
 
 document.onkeydown = function (evt){
     // 既存の処理中略
-    document.getElementById("running").classList.add("pressing");
+    document.getElementById("subsend").classList.add("pressing");
 }
 document.onkeyup = function (evt){
     // 既存の処理中略
-    document.getElementById("running").classList.remove("pressing");
+    document.getElementById("subsend").classList.remove("pressing");
 }
 
