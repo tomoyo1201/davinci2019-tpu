@@ -138,7 +138,10 @@ window.onload = () => {
 
 document.onkeydown = function (evt){
     // 既存の処理中略
+    var keyCode = event.keyCode;
+     if (keyCode == 13) {
     document.getElementById("subsend").classList.add("pressing");
+  }
 }
 document.onkeyup = function (evt){
     // 既存の処理中略
