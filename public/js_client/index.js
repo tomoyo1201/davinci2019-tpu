@@ -73,7 +73,7 @@ window.onload = () => {
     document.getElementById("teamcolor").style.background = prop.color;
   }
 
-  const setEvent = (id, callback) => document.getElementById(id).addEventListener('keydown', callback);
+  const setEvent = (id, callback) => document.getElementById(id).addEventListener('click', callback);
   const generateCallback = command => () => {
     prop.command.push(command);
     addCommand();
@@ -134,9 +134,7 @@ window.onload = () => {
     canvas.src = url.replace(/\?.+/g, "screen/?id=" + socket.id);
   }, 1000);
   setEvent('subsend', () => send('demo' + socket.id));
-};
-
-document.onkeydown = function (evt){
+  document.onkeydown = function (evt){
     // 既存の処理中略
     window.addEventListener("keydown", handleKeydown);
     function handleKeydown(event){
@@ -157,5 +155,8 @@ document.onkeyup = function (evt){
     document.getElementById("send").classList.remove("pressing");
 
   // }
-}
+  }
+
+};
+
 
