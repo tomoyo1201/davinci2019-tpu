@@ -112,37 +112,7 @@ window.onload = () => {
     addCommand();
     addEvent();
   });
-  // const send = id => {
-  //   prop.id = name.value;
-  //   if (prop.command.length === 0 || prop.id === "") {
-  //     alert('入力されていない部分があります');
-  //     return false;
-  //   }
-  //   console.log(prop);
-  //   socket.emit(id, JSON.stringify(prop));
-  // };
-  // let canvas;
-  // let canAdd = true;
-  // setEvent('send', () => {
-  //   if (!canAdd) return;
-  //   canAdd = false;
-  //   setTimeout(() => canAdd = true, 5000);
-  //   send('message');
-  // });
-  // setTimeout(() => {
-  //   canvas = document.getElementById('iframe');
-  //   canvas.src = url.replace(/\?.+/g, "screen/?id=" + socket.id);
-  // }, 1000);
-  // setEvent('subsend', () => send('demo' + socket.id));
-
-document.onkeydown = function (evt){
-    // 既存の処理中略
-    window.addEventListener("keydown", handleKeydown);
-    function handleKeydown(event){
-     var keyCode = event.keyCode;
-     if (keyCode == 13) {
-     document.getElementById("subsend").classList.add("pressing");
-       const send = id => {
+  const send = id => {
     prop.id = name.value;
     if (prop.command.length === 0 || prop.id === "") {
       alert('入力されていない部分があります');
@@ -164,7 +134,15 @@ document.onkeydown = function (evt){
     canvas.src = url.replace(/\?.+/g, "screen/?id=" + socket.id);
   }, 1000);
   setEvent('subsend', () => send('demo' + socket.id));
-     }
+};
+document.onkeydown = function (evt){
+    // 既存の処理中略
+    window.addEventListener("keydown", handleKeydown);
+    function handleKeydown(event){
+     var keyCode = event.keyCode;
+     if (keyCode == 13) {
+     document.getElementById("subsend").classList.add("pressing");
+      }
      if(keyCode == 16){
       document.getElementById("send").classList.add("pressing");
      }
@@ -179,5 +157,3 @@ document.onkeyup = function (evt){
 
   // }
   }
-};
-
