@@ -140,10 +140,13 @@ document.onkeydown = function (evt){
     // 既存の処理中略
     window.addEventListener("keydown", handleKeydown);
     function handleKeydown(event){
-    var keyCode = event.keyCode;
+     var keyCode = event.keyCode;
      if (keyCode == 13) {
-    document.getElementById("subsend").classList.add("pressing");
-    }
+     document.getElementById("subsend").classList.add("pressing");
+     }
+     if(keyCode == 16){
+      document.getElementByClassName("subsend2").classList.add("pressing");
+     }
   }
 }
 document.onkeyup = function (evt){
