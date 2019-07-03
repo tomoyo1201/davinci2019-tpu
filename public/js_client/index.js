@@ -73,7 +73,7 @@ window.onload = () => {
     document.getElementById("teamcolor").style.background = prop.color;
   }
 
-  const setEvent = (id, callback) => document.getElementById(id).addEventListener('keydown', callback);
+  const setEvent = (id, callback) => document.getElementById(id).addEventListener('click', callback);
   const generateCallback = command => () => {
     prop.command.push(command);
     addCommand();
