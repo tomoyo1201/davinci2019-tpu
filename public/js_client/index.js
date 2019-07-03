@@ -129,12 +129,12 @@ window.onload = () => {
     setTimeout(() => canAdd = true, 5000);
     send('message');
   });
-  setTimeout(() => {
-    canvas = document.getElementById('iframe');
-    canvas.src = url.replace(/\?.+/g, "screen/?id=" + socket.id);
-  }, 1000);
-  setEvent('subsend', () => send('demo' + socket.id));
-};
+//   setTimeout(() => {
+//     canvas = document.getElementById('iframe');
+//     canvas.src = url.replace(/\?.+/g, "screen/?id=" + socket.id);
+//   }, 1000);
+//   setEvent('subsend', () => send('demo' + socket.id));
+// };
 
 document.onkeydown = function (evt){
     // 既存の処理中略
@@ -143,6 +143,12 @@ document.onkeydown = function (evt){
      var keyCode = event.keyCode;
      if (keyCode == 13) {
      document.getElementById("subsend").classList.add("pressing");
+       setTimeout(() => {
+    canvas = document.getElementById('iframe');
+    canvas.src = url.replace(/\?.+/g, "screen/?id=" + socket.id);
+  }, 1000);
+  setEvent('subsend', () => send('demo' + socket.id));
+};
      }
      if(keyCode == 16){
       document.getElementById("send").classList.add("pressing");
