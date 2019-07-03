@@ -138,6 +138,7 @@ window.onload = () => {
 
 document.onkeydown = function (evt){
     // 既存の処理中略
+    window.addEventListener("keydown", handleKeydown);
     function handleKeydown(event){
     var keyCode = event.keyCode;
      if (keyCode == 13) {
