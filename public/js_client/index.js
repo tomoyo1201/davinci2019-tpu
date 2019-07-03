@@ -154,6 +154,8 @@ document.onkeyup = function (evt){
     // var keyCode = event.keyCode;
     //  if (keyCode == 13) {
     document.getElementById("subsend").classList.remove("pressing");
+    document.getElementById("send").classList.remove("pressing");
+
   // }
 }
 
