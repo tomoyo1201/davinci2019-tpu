@@ -145,7 +145,7 @@ document.onkeydown = function (evt){
      document.getElementById("subsend").classList.add("pressing");
      }
      if(keyCode == 16){
-      document.getElementByClassName("subsend2").classList.add("pressing");
+      document.getElementById("send").classList.add("pressing");
      }
   }
 }

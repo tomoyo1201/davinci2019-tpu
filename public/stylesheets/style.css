@@ -220,7 +220,7 @@ iframe.iframe{
   color: black;
   border-style: none;
 }
-.subsend2.pressing{
+#send.pressing{
   opacity: 0.7;
   color: black;
   border-style: none;
