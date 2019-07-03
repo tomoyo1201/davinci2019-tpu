@@ -151,9 +151,9 @@ document.onkeydown = function (evt){
 }
 document.onkeyup = function (evt){
     // 既存の処理中略
-    var keyCode = event.keyCode;
-     if (keyCode == 13) {
+    // var keyCode = event.keyCode;
+    //  if (keyCode == 13) {
     document.getElementById("subsend").classList.remove("pressing");
-  }
+  // }
 }
 
