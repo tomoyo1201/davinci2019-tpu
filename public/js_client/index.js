@@ -112,15 +112,7 @@ window.onload = () => {
     addCommand();
     addEvent();
   });
-  const send = id => {
-    prop.id = name.value;
-    if (prop.command.length === 0 || prop.id === "") {
-      alert('入力されていない部分があります');
-      return false;
-    }
-    console.log(prop);
-    socket.emit(id, JSON.stringify(prop));
-  };
+
   let canvas;
   let canAdd = true;
   setEvent('send', () => {
@@ -143,6 +135,15 @@ document.onkeydown = function (evt){
      var keyCode = event.keyCode;
      if (keyCode == 13) {
      document.getElementById("subsend").classList.add("pressing");
+       const send = id => {
+    prop.id = name.value;
+    if (prop.command.length === 0 || prop.id === "") {
+      alert('入力されていない部分があります');
+      return false;
+    }
+    console.log(prop);
+    socket.emit(id, JSON.stringify(prop));
+  };
      }
      if(keyCode == 16){
       document.getElementById("send").classList.add("pressing");
