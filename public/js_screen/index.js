@@ -177,7 +177,7 @@ Field.prototype = {
   winnerTeam: function (score) {
     const {red, fuchsia, lime, aqua, black} = score;
     const div = document.getElementById("winner");
-    if (black < 100) {
+    if (black < 27) {
       div.style.padding = "35px";
       div.textContent = "勝利!! " + this.winner(score);
     } else {
