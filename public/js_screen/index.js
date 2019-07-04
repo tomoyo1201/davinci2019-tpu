@@ -37,8 +37,8 @@ Field.prototype = {
     this.circles.forEach(circle => circle.discriminateCommand(this.circles));
   },
   resize: function (parent, d) {
-    this.canvas.width = Math.floor(parent.clientWidth);
-    this.canvas2.width = Math.floor(parent.clientWidth);
+    this.canvas.width = Math.floor(parent.clientWidth * 0.7);
+    this.canvas2.width = Math.floor(parent.clientWidth * 0.3);
     if (!!d) {
       this.canvas.width = parent.clientWidth;
       this.canvas2.width = 0;
