@@ -75,6 +75,9 @@ button{
   width:150px;
   margin-left:35px;
   padding-bottom:20px;
+  text-align:center;
+  color:white;
+  vertical-align:middle;
 }
 .label:before{
   content:"";
