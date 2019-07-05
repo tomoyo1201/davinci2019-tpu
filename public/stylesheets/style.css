@@ -97,7 +97,10 @@ button.button2 {
   border-bottom: solid 3px #808080;
 }
 button.match{
-  
+  width: 300px;
+  height: 50px;
+  background: grey;
+  transform:rotate(45deg);
 }
 button.button2:hover {
   opacity: 0.7;
