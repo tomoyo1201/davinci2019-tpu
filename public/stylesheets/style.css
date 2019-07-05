@@ -76,8 +76,8 @@ button{
 
  transform:
   skew(
-  calc((90deg - 30deg) / 2),
-  calc((90deg - 30deg) / 2)
+   calc((90deg - 45deg) / 2),
+   calc((90deg - 45deg) / 2)
   ); /* calc((90deg - 欲しい角度) / 2) */
 }
 button.button1 {
