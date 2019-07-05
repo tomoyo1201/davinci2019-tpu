@@ -68,6 +68,18 @@ button{
   border-radius: 5px;
   margin: 5px;
 }
+.label{
+  display: block;
+  width: 5rem;
+  eight: 5rem;
+  background: gray;
+
+ transform:
+  skew(
+  calc((90deg - 30deg) / 2),
+  calc((90deg - 30deg) / 2)
+  ); /* calc((90deg - 欲しい角度) / 2) */
+}
 button.button1 {
   flex: 0 1 45px;
   background-color: gray;
