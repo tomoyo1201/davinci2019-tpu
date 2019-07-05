@@ -68,14 +68,13 @@ button{
   border-radius: 5px;
   margin: 5px;
 }
-.label{
-  height: 0px;
-  width: 0px;
-  border-top: 20px solid transparent;
-  border-left: 0px solid transparent;
-  border-right: #000 40px solid;
-  border-bottom: 20px solid transparent;
-  -webkit-box-reflect: right;
+.rhombus{
+ width:80px;
+ height:80px;
+ background:#d5c2f4;
+ margin:20px;
+ transform:rotate(-45deg);
+ float:left;
 }
 button.button1 {
   flex: 0 1 45px;
