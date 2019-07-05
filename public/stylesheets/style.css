@@ -77,23 +77,21 @@ button{
   content:"";
   display:block;
   position:absolute;
-  top:10px;
-  left:-23px;
-  width:45px;
-  height:45px;
-  background:#09F;
-  -webkit-transform:rotate(45deg); /* 正方形を45度回転 */
+  top:0;
+  left:-16px;
+  border-top:32px solid transparent; 
+  border-bottom:32px solid transparent; /* 上下のborderを透過 */
+  border-right:16px solid #09F;
 }
 .label:after{
   content:"";
   display:block;
   position:absolute;
-  top:10px;
-  right:-23px;
-  width:45px;
-  height:45px;
-  background:#09F;
-  -webkit-transform:rotate(45deg); /* 正方形を45度回転 */
+  top:0;
+  right:-16px;
+  border-top:32px solid transparent;
+  border-bottom:32px solid transparent; /* 上下のborderを透過 */
+  border-left:16px solid #09F;m:rotate(45deg); /* 正方形を45度回転 */
 }
 button.button1 {
   flex: 0 1 45px;
