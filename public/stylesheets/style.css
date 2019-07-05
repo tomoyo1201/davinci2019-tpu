@@ -68,14 +68,32 @@ button{
   border-radius: 5px;
   margin: 5px;
 }
-.rhombus{
- width:45px;
- height:45px;
- background:#d5c2f4;
- margin-left:80px;
- margin-right:auto;
- transform:rotate(-45deg);
- text-align:center;
+.label{
+  position:relative;
+  height:64px;
+  background:#09F;
+}
+.label:before{
+  content:"";
+  display:block;
+  position:absolute;
+  top:10px;
+  left:-23px;
+  width:45px;
+  height:45px;
+  background:#09F;
+  -webkit-transform:rotate(45deg); /* 正方形を45度回転 */
+}
+.label:after{
+  content:"";
+  display:block;
+  position:absolute;
+  top:10px;
+  right:-23px;
+  width:45px;
+  height:45px;
+  background:#09F;
+  -webkit-transform:rotate(45deg); /* 正方形を45度回転 */
 }
 button.button1 {
   flex: 0 1 45px;
