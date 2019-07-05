@@ -86,9 +86,7 @@ button{
   border-bottom:20px solid transparent; /* 上下のborderを透過 */
   border-right:15px solid #09F;
 }
-p{
-  text-align:center;
-}
+
 .label:after{
   content:"";
   display:block;
