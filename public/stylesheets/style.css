@@ -72,9 +72,10 @@ button{
  width:45px;
  height:45px;
  background:#d5c2f4;
- margin:20px;
+ margin-left:auto;
+ margin-right:auto;
  transform:rotate(-45deg);
- justify-content:center;
+ text-align:center;
 }
 button.button1 {
   flex: 0 1 45px;
