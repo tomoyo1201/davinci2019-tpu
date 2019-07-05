@@ -74,26 +74,30 @@ button{
   background:#09F;
   width:150px;
   margin-left:35px;
+  padding-bottom:20px;
 }
 .label:before{
   content:"";
   display:block;
   position:absolute;
   top:0;
-  left:-16px;
+  left:-15px;
   border-top:20px solid transparent; 
   border-bottom:20px solid transparent; /* 上下のborderを透過 */
-  border-right:16px solid #09F;
+  border-right:15px solid #09F;
+}
+p{
+  text-align:center;
 }
 .label:after{
   content:"";
   display:block;
   position:absolute;
   top:0;
-  right:-16px;
+  right:-15px;
   border-top:20px solid transparent;
   border-bottom:20px solid transparent; /* 上下のborderを透過 */
-  border-left:16px solid #09F;m:rotate(45deg); /* 正方形を45度回転 */
+  border-left:15px solid #09F;m:rotate(45deg); /* 正方形を45度回転 */
 }
 button.button1 {
   flex: 0 1 45px;
