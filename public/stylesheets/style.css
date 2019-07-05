@@ -69,8 +69,8 @@ button{
   margin: 5px;
 }
 .rhombus{
- width:80px;
- height:80px;
+ width:45px;
+ height:45px;
  background:#d5c2f4;
  margin:20px;
  transform:rotate(-45deg);
